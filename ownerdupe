@@ -1,0 +1,58 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Key System Advanced", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+local MainTab = Window:MakeTab({
+    Name = "Key",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+_G.KeyInput = "string"
+_G.Key = "Owner"
+function BloodBath()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/jack256436/yes/main/dupe')))()
+end
+
+function CorrectKeyNotification()
+OrionLib:MakeNotification({
+    Name = "Correct Key",
+    Content = "Correct Key",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+end
+
+function IncorrectKeyNotification()
+OrionLib:MakeNotification({
+    Name = "Inccorect Key",
+    Content = "Wrong Key",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+end
+
+
+
+MainTab:AddTextbox({
+    Name = "Enter Key",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(Value)
+        _G.KeyInput = Value
+    end      
+})
+
+MainTab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+          if _G.KeyInput == _G.Key then
+BloodBath()
+    CorrectKeyNotification()
+    else
+        IncorrectKeyNotification()
+
+
+          end
+      end    
+})
